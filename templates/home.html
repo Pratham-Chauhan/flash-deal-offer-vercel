@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+	#main {
+	    display: flex;
+	    flex: 1;
+	    height: 100%; /* Make the main container full height */
+	}
+
+        #menu {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            float: left;
+	    overflow-y: auto;
+
+        }
+
+        #view {
+            margin-left: 220px;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .item {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+	.item:hover {
+		background-color: #333;
+		color: #fff;
+	}
+
+	#content {
+	    flex: 1;
+	    padding: 10px;
+	    display: flex;
+	    flex-direction: column;
+	}
+
+	#content {
+	    flex: 1;
+	    padding: 10px;
+	    display: flex;
+	    flex-direction: column;
+	    background-color: #f5f5f5; /* Add background color to the content area */
+	    align-items: center; /* Center the image horizontally */
+	    justify-content: center; /* Center the image vertically */
+	}
+
+	#graphImage {
+	    max-width: 100%;
+	    max-height: 100%;
+	}
+
+    </style>
+</head>
+<body>
+<div id="main">
+
+	<div id="menu">
+		{% for item in menu_items %}
+		<div class="item" onmouseover="showGraph('{{ item }}')">{{ item }}</div>
+		{% endfor %}
+	</div>
+
+
+	 <div id="content">
+		<img id="graphImage" src="./static/img/Onion (Pyaaz).png" />
+	    </div>
+	</div>
+
+</div>
+
+	 <script>
+		function showGraph(item) {
+		    const graphContainer = document.getElementById('graphContainer');
+		    const graphImage = document.getElementById('graphImage');
+		    const imagePath = `/static/img/${item}.png`;
+
+		    graphImage.src = imagePath;
+		    graphContainer.style.display = 'block';
+
+		    // Remove the active class from all menu items
+		    const menuItems = document.querySelectorAll('.item');
+		    menuItems.forEach(item => item.classList.remove('active'));
+
+		    // Add the active class to the clicked menu item
+		    event.currentTarget.classList.add('active');
+		}
+	    </script>
+</body>
+</html>
