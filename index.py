@@ -5,7 +5,7 @@ import subprocess
 # run scraping process in backgroud 
 # subprocess.Popen(["rm","-r","some.file"]) 
 # print(otp.create_graph())
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='./tmp/')
 
 @app.route('/')
 def index():
