@@ -76,7 +76,7 @@
 
 
 	 <div id="content">
-		<img id="graphImage" src="./static/img/Onion (Pyaaz).png" />
+		<img id="graphImage" src="./tmp/img/Onion (Pyaaz).png" />
 	    </div>
 	</div>
 
@@ -86,7 +86,7 @@
 		function showGraph(item) {
 		    const graphContainer = document.getElementById('graphContainer');
 		    const graphImage = document.getElementById('graphImage');
-		    const imagePath = `/static/img/${item}.png`;
+		    const imagePath = `/tmp/img/${item}.png`;
 
 		    graphImage.src = imagePath;
 		    graphContainer.style.display = 'block';
