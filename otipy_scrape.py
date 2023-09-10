@@ -185,7 +185,8 @@ def create_graph():
         
         # plt.show()
         # don't save for now because of read-only file system in vercel
-        plt.savefig(f'./tmp/img/{title}.png') 
+        
+        plt.savefig(f'/tmp/img/{title}.png') 
         # plt.close()
     
     return current_deal_items
