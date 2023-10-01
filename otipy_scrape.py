@@ -204,8 +204,8 @@ def create_graph():
         plt.step(x, y, '-', where='post')
         
         # plt.show()
-        plt.savefig(f'./static/img/{title}.png')
-        plt.close()
+        # plt.savefig(f'./static/img/{title}.png')
+        # plt.close()
     
     return current_deal_items
 # create_graph()
