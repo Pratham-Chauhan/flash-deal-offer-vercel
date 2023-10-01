@@ -9,7 +9,7 @@ app = Flask(__name__) #, static_url_path='', static_folder='./tmp/')
 
 @app.route('/')
 def index():
-    return render_template('home.html', menu_items=otp.create_graph())
+    return render_template('home.html', menu_items=otp.download_from_mega())
 
 if __name__ == '__main__':
     app.run(debug=True)
