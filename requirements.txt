@@ -1,6 +1,6 @@
 Flask
 requests
 pandas
-matplotlib
+matplotlib==3.7.2
 numpy
 mega.py
