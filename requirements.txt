@@ -1,6 +1,6 @@
 Flask
 requests
 pandas
-matplotlib==3.0.3
 numpy
+plotly
 mega.py
